@@ -1,0 +1,301 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+
+    <!-- Background glow centred on the panel -->
+    <radialGradient id="bgGlow" cx="72%" cy="50%" r="46%">
+      <stop offset="0%"   stop-color="#4F7EFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0F0F0F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dot-grid tile -->
+    <pattern id="dotGrid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="24" cy="24" r="1" fill="#FFFFFF" opacity="0.025"/>
+    </pattern>
+
+    <!-- Panel drop-shadow (blue tint + dark) -->
+    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0"  stdDeviation="48" flood-color="#4F7EFF" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="32" stdDeviation="48" flood-color="#000000" flood-opacity="0.90"/>
+    </filter>
+
+    <!-- Clip panel content to its rounded rect -->
+    <clipPath id="panelClip">
+      <rect x="1110" y="190" width="660" height="690" rx="16"/>
+    </clipPath>
+
+    <!-- Fade rows toward bottom on the left side -->
+    <linearGradient id="rowFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="40%" stop-color="#0F0F0F" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0F0F0F" stop-opacity="1"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ── Background ─────────────────────────────────────────────────── -->
+  <rect width="1920" height="1080" fill="#0F0F0F"/>
+  <rect width="1920" height="1080" fill="url(#dotGrid)"/>
+  <rect width="1920" height="1080" fill="url(#bgGlow)"/>
+
+  <!-- Subtle vertical separator between left copy and right panel -->
+  <line x1="1070" y1="100" x2="1070" y2="980" stroke="#1C1C1C" stroke-width="1"/>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LEFT CONTENT
+       ════════════════════════════════════════════════════════════════ -->
+
+  <!-- Plugin badge -->
+  <rect x="116" y="196" width="162" height="28" rx="14" fill="#141414" stroke="#282828" stroke-width="1"/>
+  <circle cx="141" cy="210" r="4.5" fill="#4F7EFF"/>
+  <text x="156" y="215"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="11" font-weight="700" fill="#4F7EFF" letter-spacing="1.8">FIGMA PLUGIN</text>
+
+  <!-- Title: line 1 -->
+  <text x="112" y="344"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="96" font-weight="800" fill="#FFFFFF" letter-spacing="-3">Batch Rename</text>
+
+  <!-- Title: line 2 (accent) -->
+  <text x="112" y="454"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="96" font-weight="800" fill="#4F7EFF" letter-spacing="-3">Pro</text>
+
+  <!-- Tagline -->
+  <text x="116" y="514"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="20" fill="#585858">
+    Rename layers in bulk. Live preview. Fully offline.
+  </text>
+
+  <!-- Feature pills row -->
+  <!-- Pill: Pattern Mode -->
+  <rect x="116" y="546" width="136" height="26" rx="13" fill="#141414" stroke="#262626" stroke-width="1"/>
+  <text x="184" y="563"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="11" fill="#999999" text-anchor="middle">Pattern Mode</text>
+  <!-- Pill: Find & Replace -->
+  <rect x="264" y="546" width="148" height="26" rx="13" fill="#141414" stroke="#262626" stroke-width="1"/>
+  <text x="338" y="563"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="11" fill="#999999" text-anchor="middle">Find &amp; Replace</text>
+  <!-- Pill: Sequence -->
+  <rect x="424" y="546" width="112" height="26" rx="13" fill="#141414" stroke="#262626" stroke-width="1"/>
+  <text x="480" y="563"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="11" fill="#999999" text-anchor="middle">Sequence</text>
+  <!-- Pill: Structure -->
+  <rect x="548" y="546" width="112" height="26" rx="13" fill="#141414" stroke="#262626" stroke-width="1"/>
+  <text x="604" y="563"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="11" fill="#999999" text-anchor="middle">Structure</text>
+
+  <!-- Thin rule -->
+  <line x1="116" y1="598" x2="940" y2="598" stroke="#1E1E1E" stroke-width="1"/>
+
+  <!-- Before → After label -->
+  <text x="116" y="630"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="10" font-weight="700" fill="#303030" letter-spacing="3">BEFORE → AFTER</text>
+
+  <!-- Row 1 -->
+  <text x="116" y="668" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#484848">Layer 1</text>
+  <text x="340" y="668" font-family="-apple-system, sans-serif"                      font-size="17" fill="#2C419A">→</text>
+  <text x="374" y="668" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#4F7EFF">btn/rectangle/01</text>
+
+  <!-- Row 2 -->
+  <text x="116" y="700" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#484848">Layer 2</text>
+  <text x="340" y="700" font-family="-apple-system, sans-serif"                      font-size="17" fill="#2C419A">→</text>
+  <text x="374" y="700" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#4F7EFF">btn/rectangle/02</text>
+
+  <!-- Row 3 -->
+  <text x="116" y="732" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#484848">Text</text>
+  <text x="340" y="732" font-family="-apple-system, sans-serif"                      font-size="17" fill="#2C419A">→</text>
+  <text x="374" y="732" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#4F7EFF">btn/text/03</text>
+
+  <!-- Row 4 -->
+  <text x="116" y="764" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#484848">Group</text>
+  <text x="340" y="764" font-family="-apple-system, sans-serif"                      font-size="17" fill="#2C419A">→</text>
+  <text x="374" y="764" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#4F7EFF">btn/group/04</text>
+
+  <!-- Row 5 -->
+  <text x="116" y="796" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#484848">Frame 1</text>
+  <text x="340" y="796" font-family="-apple-system, sans-serif"                      font-size="17" fill="#2C419A">→</text>
+  <text x="374" y="796" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#4F7EFF">btn/frame/05</text>
+
+  <!-- Row 6 (dimmed) -->
+  <text x="116" y="828" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#333333">Icon</text>
+  <text x="340" y="828" font-family="-apple-system, sans-serif"                      font-size="17" fill="#1C2A60">→</text>
+  <text x="374" y="828" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#354DA0">btn/vector/06</text>
+
+  <!-- Row 7 (more dimmed) -->
+  <text x="116" y="860" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#252525">Label</text>
+  <text x="340" y="860" font-family="-apple-system, sans-serif"                      font-size="17" fill="#111830">→</text>
+  <text x="374" y="860" font-family="'SF Mono','Cascadia Code','Consolas',monospace" font-size="17" fill="#223070">btn/text/07</text>
+
+  <!-- Row fade overlay -->
+  <rect x="116" y="790" width="860" height="110" fill="url(#rowFade)"/>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       RIGHT: PLUGIN UI MOCKUP
+       Panel: x=1110, y=190, w=660, h=690  (bottom=880)
+       ════════════════════════════════════════════════════════════════ -->
+
+  <!-- Shadow rect (rendered behind clip) -->
+  <rect x="1110" y="190" width="660" height="690" rx="16"
+        fill="#1A1A1A" filter="url(#panelShadow)"/>
+
+  <g clip-path="url(#panelClip)">
+
+    <!-- Panel base fill -->
+    <rect x="1110" y="190" width="660" height="690" fill="#1A1A1A"/>
+
+    <!-- ── Header (h=68) y=190–258 ── -->
+    <text x="1134" y="232"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="14" font-weight="600" fill="#FFFFFF">Batch Rename Pro</text>
+    <!-- Badge -->
+    <rect x="1710" y="218" width="42" height="20" rx="10" fill="#242424"/>
+    <text x="1731" y="232"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="10" fill="#666666" text-anchor="middle">8</text>
+    <!-- Separator -->
+    <line x1="1110" y1="258" x2="1770" y2="258" stroke="#222222" stroke-width="1"/>
+
+    <!-- ── Tabs (h=46) y=258–304 ── -->
+    <rect x="1110" y="258" width="660" height="46" fill="#161616"/>
+    <!-- Tab 1 active -->
+    <text x="1193" y="284"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9.5" font-weight="700" fill="#4F7EFF" text-anchor="middle" letter-spacing="0.8">PATTERN</text>
+    <rect x="1153" y="302" width="80" height="2" rx="1" fill="#4F7EFF"/>
+    <!-- Tab 2 -->
+    <text x="1358" y="284"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9.5" font-weight="500" fill="#3A3A3A" text-anchor="middle" letter-spacing="0.4">FIND / REPLACE</text>
+    <!-- Tab 3 -->
+    <text x="1523" y="284"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9.5" font-weight="500" fill="#3A3A3A" text-anchor="middle" letter-spacing="0.4">SEQUENCE</text>
+    <!-- Tab 4 -->
+    <text x="1688" y="284"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9.5" font-weight="500" fill="#3A3A3A" text-anchor="middle" letter-spacing="0.4">STRUCTURE</text>
+    <line x1="1110" y1="304" x2="1770" y2="304" stroke="#222222" stroke-width="1"/>
+
+    <!-- ── Mode panel (h=98) y=304–402 ── -->
+    <rect x="1110" y="304" width="660" height="98" fill="#1A1A1A"/>
+    <text x="1134" y="325"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9" font-weight="700" fill="#3A3A3A" letter-spacing="2">PATTERN</text>
+    <!-- Input field (focused, blue border) -->
+    <rect x="1134" y="332" width="612" height="30" rx="5" fill="#1E1E1E" stroke="#4F7EFF" stroke-width="1.5"/>
+    <text x="1147" y="351"
+          font-family="'SF Mono','Cascadia Code','Consolas',monospace"
+          font-size="13" fill="#E8E8E8">btn/{type}/{nn}</text>
+    <!-- Token hint line -->
+    <text x="1134" y="382"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="10" fill="#303030">Tokens: </text>
+    <text x="1190" y="382"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="10" fill="#3A5AB8">{n}  {nn}  {name}  {type}  {parent}  {i}</text>
+    <line x1="1110" y1="402" x2="1770" y2="402" stroke="#222222" stroke-width="1"/>
+
+    <!-- ── Preview header (h=26) y=402–428 ── -->
+    <rect x="1110" y="402" width="660" height="26" fill="#161616"/>
+    <text x="1134" y="419"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9" font-weight="700" fill="#3A3A3A" letter-spacing="2">PREVIEW</text>
+    <text x="1756" y="419"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="9.5" fill="#3A5AB8" text-anchor="end">8 changes</text>
+    <line x1="1110" y1="428" x2="1770" y2="428" stroke="#1C1C1C" stroke-width="1"/>
+
+    <!-- Column headers (h=22) y=428–450 -->
+    <rect x="1110" y="428" width="660" height="22" fill="#161616"/>
+    <text x="1134" y="443"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="8.5" fill="#2E2E2E" letter-spacing="2">BEFORE</text>
+    <text x="1450" y="443"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="8.5" fill="#2E2E2E" letter-spacing="2">AFTER</text>
+    <line x1="1110" y1="450" x2="1770" y2="450" stroke="#1C1C1C" stroke-width="1"/>
+
+    <!-- ── Table rows (each h=30) y starts 450 ── -->
+    <!-- R1 -->
+    <rect x="1110" y="450" width="660" height="30" fill="#101010"/>
+    <text x="1134" y="469" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Layer 1</text>
+    <text x="1450" y="469" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/rectangle/01</text>
+    <!-- R2 -->
+    <rect x="1110" y="480" width="660" height="30" fill="#131313"/>
+    <text x="1134" y="499" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Layer 2</text>
+    <text x="1450" y="499" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/rectangle/02</text>
+    <!-- R3 -->
+    <rect x="1110" y="510" width="660" height="30" fill="#101010"/>
+    <text x="1134" y="529" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Text</text>
+    <text x="1450" y="529" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/text/03</text>
+    <!-- R4 -->
+    <rect x="1110" y="540" width="660" height="30" fill="#131313"/>
+    <text x="1134" y="559" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Group</text>
+    <text x="1450" y="559" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/group/04</text>
+    <!-- R5 -->
+    <rect x="1110" y="570" width="660" height="30" fill="#101010"/>
+    <text x="1134" y="589" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Frame 1</text>
+    <text x="1450" y="589" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/frame/05</text>
+    <!-- R6 -->
+    <rect x="1110" y="600" width="660" height="30" fill="#131313"/>
+    <text x="1134" y="619" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Icon</text>
+    <text x="1450" y="619" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/vector/06</text>
+    <!-- R7 -->
+    <rect x="1110" y="630" width="660" height="30" fill="#101010"/>
+    <text x="1134" y="649" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">Label</text>
+    <text x="1450" y="649" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/text/07</text>
+    <!-- R8 -->
+    <rect x="1110" y="660" width="660" height="30" fill="#131313"/>
+    <text x="1134" y="679" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#555555">BG</text>
+    <text x="1450" y="679" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="#4F7EFF">btn/rectangle/08</text>
+
+    <!-- Fade bottom of table into footer -->
+    <defs>
+      <linearGradient id="tblFade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#131313" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#1A1A1A" stop-opacity="1"/>
+      </linearGradient>
+    </defs>
+    <rect x="1110" y="660" width="660" height="30" fill="url(#tblFade)"/>
+
+    <!-- ── Footer y=690–880 ── -->
+    <line x1="1110" y1="690" x2="1770" y2="690" stroke="#222222" stroke-width="1"/>
+    <rect x="1110" y="690" width="660" height="190" fill="#1A1A1A"/>
+
+    <!-- Reset button -->
+    <rect x="1134" y="706" width="168" height="36" rx="5" fill="#1E1E1E" stroke="#2A2A2A" stroke-width="1"/>
+    <text x="1218" y="728"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="12" font-weight="500" fill="#555555" text-anchor="middle">Reset</text>
+
+    <!-- Apply Rename button -->
+    <rect x="1316" y="706" width="428" height="36" rx="5" fill="#4F7EFF"/>
+    <!-- Subtle shine on button -->
+    <rect x="1316" y="706" width="428" height="18" rx="5" fill="#FFFFFF" opacity="0.05"/>
+    <text x="1530" y="728"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Apply Rename</text>
+
+    <!-- Status bar -->
+    <text x="1440" y="770"
+          font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="12" fill="#4FBF4F" text-anchor="middle">✅  8 layers renamed</text>
+
+  </g>
+
+  <!-- Panel border (drawn above clip so it's crisp) -->
+  <rect x="1110" y="190" width="660" height="690" rx="16"
+        fill="none" stroke="#2A2A2A" stroke-width="1.5"/>
+
+  <!-- Accent top-edge glow line on panel -->
+  <rect x="1126" y="190" width="628" height="1.5" rx="1" fill="#4F7EFF" opacity="0.45"/>
+
+</svg>
