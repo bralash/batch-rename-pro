@@ -1,0 +1,13 @@
+{
+  "name": "batch-rename-pro",
+  "version": "1.0.0",
+  "description": "A zero-AI, fully offline layer renaming tool for Figma power users",
+  "scripts": {
+    "build": "tsc --noEmit false",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.90.0",
+    "typescript": "^5.3.0"
+  }
+}
